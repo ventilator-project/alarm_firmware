@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * @file      startup_stm32f030x6.s
+  * @file      startup_stm32f030x8.s
   * @author    MCD Application Team
-  * @brief     STM32F030x4/STM32F030x6 devices vector table for GCC toolchain.
+  * @brief     STM32F030x8 devices vector table for GCC toolchain.
   *            This module performs:
   *                - Set the initial SP
   *                - Set the initial PC == Reset_Handler,
@@ -155,18 +155,18 @@ g_pfnVectors:
   .word  TIM1_CC_IRQHandler                /* TIM1 Capture Compare         */
   .word  0                                 /* Reserved                     */
   .word  TIM3_IRQHandler                   /* TIM3                         */
-  .word  0                                 /* Reserved                     */
+  .word  TIM6_IRQHandler                   /* TIM6                         */
   .word  0                                 /* Reserved                     */
   .word  TIM14_IRQHandler                  /* TIM14                        */
-  .word  0                                 /* Reserved                     */
+  .word  TIM15_IRQHandler                  /* TIM15                        */
   .word  TIM16_IRQHandler                  /* TIM16                        */
   .word  TIM17_IRQHandler                  /* TIM17                        */
   .word  I2C1_IRQHandler                   /* I2C1                         */
-  .word  0                                 /* Reserved                     */
+  .word  I2C2_IRQHandler                   /* I2C2                         */
   .word  SPI1_IRQHandler                   /* SPI1                         */
-  .word  0                                 /* Reserved                     */
+  .word  SPI2_IRQHandler                   /* SPI2                         */
   .word  USART1_IRQHandler                 /* USART1                       */
-  .word  0                                 /* Reserved                     */
+  .word  USART2_IRQHandler                 /* USART2                       */
   .word  0                                 /* Reserved                     */
   .word  0                                 /* Reserved                     */
   .word  0                                 /* Reserved                     */
@@ -236,8 +236,14 @@ g_pfnVectors:
   .weak      TIM3_IRQHandler
   .thumb_set TIM3_IRQHandler,Default_Handler
 
+  .weak      TIM6_IRQHandler
+  .thumb_set TIM6_IRQHandler,Default_Handler
+
   .weak      TIM14_IRQHandler
   .thumb_set TIM14_IRQHandler,Default_Handler
+
+  .weak      TIM15_IRQHandler
+  .thumb_set TIM15_IRQHandler,Default_Handler
 
   .weak      TIM16_IRQHandler
   .thumb_set TIM16_IRQHandler,Default_Handler
@@ -248,11 +254,20 @@ g_pfnVectors:
   .weak      I2C1_IRQHandler
   .thumb_set I2C1_IRQHandler,Default_Handler
 
+  .weak      I2C2_IRQHandler
+  .thumb_set I2C2_IRQHandler,Default_Handler
+
   .weak      SPI1_IRQHandler
   .thumb_set SPI1_IRQHandler,Default_Handler
 
+  .weak      SPI2_IRQHandler
+  .thumb_set SPI2_IRQHandler,Default_Handler
+
   .weak      USART1_IRQHandler
   .thumb_set USART1_IRQHandler,Default_Handler
+
+  .weak      USART2_IRQHandler
+  .thumb_set USART2_IRQHandler,Default_Handler
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 

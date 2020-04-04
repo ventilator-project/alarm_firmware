@@ -48,6 +48,9 @@ extern "C" {
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
 
+#define FALSE   0
+#define TRUE    (!FALSE)
+
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
@@ -58,16 +61,24 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define LED_G_Pin GPIO_PIN_0
-#define LED_G_GPIO_Port GPIOA
-#define LED_B_Pin GPIO_PIN_1
-#define LED_B_GPIO_Port GPIOA
-#define BUT_EXTRA_Pin GPIO_PIN_2
-#define BUT_EXTRA_GPIO_Port GPIOA
+#define OLED_RST_Pin GPIO_PIN_0
+#define OLED_RST_GPIO_Port GPIOF
+#define OLED_DC_Pin GPIO_PIN_1
+#define OLED_DC_GPIO_Port GPIOF
+#define BUT_CAL_Pin GPIO_PIN_0
+#define BUT_CAL_GPIO_Port GPIOA
+#define BUT_SELECT_Pin GPIO_PIN_1
+#define BUT_SELECT_GPIO_Port GPIOA
 #define PIEZO_Pin GPIO_PIN_3
 #define PIEZO_GPIO_Port GPIOA
-#define LED_R_Pin GPIO_PIN_1
+#define LED_R_Pin GPIO_PIN_0
 #define LED_R_GPIO_Port GPIOB
+#define LED_RB1_Pin GPIO_PIN_1
+#define LED_RB1_GPIO_Port GPIOB
+#define LED_G_Pin GPIO_PIN_4
+#define LED_G_GPIO_Port GPIOB
+#define LED_B_Pin GPIO_PIN_5
+#define LED_B_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

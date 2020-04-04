@@ -23,6 +23,9 @@
 #include "stm32f0xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+#include "button.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,6 +45,11 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
+
+static uint32_t ticks = 0;
+
+extern volatile char KEY;
+extern volatile char KEY_VALID;
 
 /* USER CODE END PV */
 
@@ -125,6 +133,24 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
+
+  char key = KEY_NULL;
+
+  ticks++;
+
+  if (( ticks % TICKS_INTERVAL) == 0 )
+  {
+    key = read_key();
+
+    if (key != KEY_NULL)
+    {
+      if (!KEY_VALID)
+      {
+        KEY = key;       // store key in global key buffer
+        KEY_VALID = TRUE;
+      }
+    }
+  }
 
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
