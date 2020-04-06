@@ -27,7 +27,7 @@ fix/master/my_contribution master`. Please avoid working directly on the
 * Check for unnecessary whitespace with `git diff --check` before committing.
 * Make sure your commit messages are in the proper format. If the commit
 addresses an issue filed in the
-[ch554_sdcc Issues](https://github.com/Blinkinlabs/ch554_sdcc/issues), start
+[Issues](https://github.com/ventilator-project/alarm_firmware/issues), start
 the first line of the commit with the issue number in parentheses.
 
 ```
@@ -80,7 +80,7 @@ first line of the commit with `(maint)`.
 ## Submitting Changes
 
 * Push your changes to a topic branch in your fork of the repository.
-* Submit a pull request to the repository in the Blinkinlabs organization.
+* Submit a pull request to the repository in this organization.
 * The core team looks at Pull Requests on a regular basis.
 * After feedback has been given we expect responses within two weeks. After two
 weeks we may close the pull request if it isn't showing any activity.
